@@ -5,7 +5,14 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!-- wow css -->
+    <link rel="stylesheet" href="css/animate.css">
 
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -213,6 +220,23 @@
             </div>
 
 
+            <!-- =======================================
+                 portfolio Website
+                 ==========================================-->
+
+            <div class="section-wrapper z-depth-1 wow fadeIn" data-wow-delay="0.1s">                            
+              <div class="col s12 m12 l10 website right" >
+                <div class="row">
+                  <div class="col s12 m12 l6">
+                    <span><a href="">www.alrayhan.com</a></span>
+                  </div>
+                  <div class="col col s12 m12 l6">
+                    <span><a href="">www.dribble.com/rtralrayhan</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
           </div>
         </section>
@@ -222,7 +246,35 @@
     </div> <!-- end container -->
     
     <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="assets/js/validator.min.js"></script>
+    
+    <!-- Masonry js-->
+    <script src="assets/js/masonry.pkgd.js"></script>
+
+    
+    <script>
+      new WOW().init();
+
+    /***************************************************************************/
+            /* NAVIGATION  */
+    /***************************************************************************/
+   
+      $('.button-collapse').sideNav();
+ 
+    /**************************************************************************
+                 SKILL BAR 
+    **************************************************************************/
+
+      $(".determinate").each(function(){
+          var width = $(this).text();
+          $(this).css("width", width)
+            .empty()
+            .append('<i class="fa fa-circle"></i>');                
+      });
+
+    </script>
   </body>
 </html>
