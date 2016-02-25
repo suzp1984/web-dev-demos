@@ -19,6 +19,8 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.2.0",
-    "iron-input": "PolymerElements/iron-input#^1.0.8"
+    "iron-input": "PolymerElements/iron-input#^1.0.8",
+    "iron-icon": "PolymerElements/iron-icon#^1.0.7",
+    "iron-icons": "PolymerElements/iron-icons#^1.1.3"
   }
 }
