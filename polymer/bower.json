@@ -1,0 +1,24 @@
+{
+  "name": "polymer-demo",
+  "homepage": "https://github.com/suzp1984/web-dev-demos",
+  "authors": [
+    "suzp1984 <suzp1984@gmail.com>"
+  ],
+  "description": "polymer demo",
+  "main": "index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "iron-input": "PolymerElements/iron-input#^1.0.8"
+  }
+}
