@@ -14,3 +14,9 @@ How to start the server
     go run server.go
 ```
 
+* Node Server
+
+```javascript
+    npm install
+    node server.js
+```
