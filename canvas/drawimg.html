@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>drawing image</title>
+    <style>
+      #canvas {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #aaa;
+      }
+
+      input {
+      display: block;
+      margin: 20px auto;
+      width: 800px;
+      }
+
+      #watermark-canvas {
+      display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas">
+    </canvas>
+    
+    <input type="range" id="scale-range" min="0.5" max="3.0" step="0.01" value="1.0" />
+
+    <canvas id="watermark-canvas"></canvas>
+    
+    <script src='js/drawimg.js'></script>
+  </body>
+</html>
