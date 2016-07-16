@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Image Filter</title>
+    <style>
+      img {
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      }
+
+      #original {
+      float: left;
+      }
+
+      #dest-img {
+      float: right;
+      }
+
+      #description {
+      clear: both;
+      margin-top: 20px;
+      text-align: center;
+      }
+      
+      #control-panel {
+      margin: 0 auto;
+      }
+      
+      #control-panel > a {
+      background-color: yellow;
+      border-radius: 4px;
+      margin: 4px 4px;
+      padding: 4px 4px;
+      }
+
+      .active {
+      background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="original" src="img/grandma.jpg">
+    <img id="dest-img" src="img/grandma.jpg">
+
+    <p id="description">ABC</p>
+    <div id="control-panel">
+      <a href="javascript: greyEffect()">Grey Effect</a>
+      <a href="javascript: sepiaEffect()">Sepia Effect</a>
+      <a href="javascript: saturateEffect()">Saturate Effect</a>
+      <a href="javascript: hueRotate()">Hue-Rotate</a>
+      <a href="javascript: invert()">Invert</a>
+      <a href="javascript: opacity()">Opacity</a>
+      <a href="javascript: brightness()">Brightness</a>
+      <a href="javascript: contrast()">Contrast</a>
+      <a href="javascript: blur()">Blur</a>
+      <a href="javascript: dropShadow()">drop-shadow</a>
+    </div>
+    <script src="js/image-filter.js"></script>
+  </body>
+</html>
