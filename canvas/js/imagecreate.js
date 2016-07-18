@@ -8,6 +8,15 @@
     let canvas3 = document.getElementById("martinart");
     let context3 = canvas3.getContext("2d");
 
+    let canvas4 = document.getElementById("manuelKasten");
+    let context4 = canvas4.getContext("2d");
+
+    let canvas5 = document.getElementById("manuelKasten2");
+    let context5 = canvas5.getContext("2d");
+
+    let canvas6 = document.getElementById("githubphagocyte");
+    let context6 = canvas6.getContext("2d");
+    
     window.onload = function() {
         // image1 
         canvas.width = 800;
@@ -116,16 +125,106 @@
 
             return b[i][j];
         };
+
+        // manuel Kasten's mandelbrot art
+        canvas4.width = 1024;
+        canvas4.height = 1024;
+        
+        let kastenData = context4.createImageData(canvas4.width, canvas4.height);
+        let kastenPixel = kastenData.data;
+
+        for (let i = 0; i < canvas4.height; i++)
+            for (let j = 0; j < canvas4.width; j++) {
+                let p = i * canvas4.width + j;
+
+                let a = 0;
+                let b = 0;
+                let c = 0;
+                let d = 0;
+                let n = 0;
+
+                while((c = a*a) + (d = b*b) < 4 && n++ < 880) {
+                    b = 2*a*b + j*8e-9 - 0.645411;
+                    a = c - d + i*8e-9 + 0.356888;
+                }
+                
+                kastenPixel[4*p + 0] = 255*Math.pow((n-80)/800, 3.0);
+                kastenPixel[4*p + 1] = 255*Math.pow((n-80)/800, 0.7);
+                kastenPixel[4*p + 2] = 255*Math.pow((n-80)/800, 0.5);
+                kastenPixel[4*p + 3] = 255;
+            }
+        
+        context4.putImageData(kastenData, 0, 0, 0, 0, canvas4.width, canvas4.height);
+
+        // Manuel Kasten's second art
+        canvas5.width = 1024;
+        canvas5.height = 1024;
+
+        let kasten2Data = context5.createImageData(canvas5.width, canvas5.height);
+        let kasten2Pixel = kasten2Data.data;
+        r = 0;
+        g = 0;
+        b = 0;
+        for (let i = 0; i < canvas5.height; i++)
+            for (let j = 0; j < canvas5.width; j++) {
+                let p = i * canvas5.width + j;
+
+                kasten2Pixel[4*p + 0] = kasten2_r();
+                kasten2Pixel[4*p + 1] = kasten2_g();
+                kasten2Pixel[4*p + 2] = kasten2_b();
+                kasten2Pixel[4*p + 3] = 255;
+            }
+
+        context5.putImageData(kasten2Data, 0, 0, 0, 0, canvas5.width, canvas5.height);
+
+        function kasten2_r() {
+            r += Math.random() / 1.0;
+            let l = r;
+            l = l % 512;
+
+            return l > 255 ? 511 - l : l;
+        };
+
+        function kasten2_g() {
+            g += Math.random() / 1.0;
+            let l = g;
+            l = l % 512;
+
+            return l > 255 ? 511 - l : l;
+        }
+
+        function kasten2_b() {
+            b += Math.random() / 1.0;
+            let l = b;
+            l = l % 512;
+
+            return l > 255 ? 511 - l : l;
+        }
+
+        // githubphagocyte's art
+        canvas6.width = 1024;
+        canvas6.height = 1024;
+
+        let githubphagocyteData = context6.createImageData(canvas6.width, canvas6.height);
+        let githubphagocytePixel = githubphagocyteData.data;
+
+        for (let i = 0; i < canvas6.height; i++)
+            for (let j = 0; j < canvas6.width; j++) {
+                let p = i * canvas6.width + j;
+                let s = 3.0/(j+99);
+                let y = (j + Math.sin((i*i + Math.pow(j-700, 2)*5)/100.0/canvas6.width)*35)*s;
+
+                githubphagocytePixel[4*p + 0] = (parseInt((i+canvas6.width)*s+y)%2 + parseInt((canvas6.width*2 - i)*s + y) % 2 )*127;
+                githubphagocytePixel[4*p + 1] = (parseInt(5*((i+canvas6.width)*s+y))%2 + parseInt(5*((canvas6.width*2 - i)*s + y)) % 2)*127;
+                githubphagocytePixel[4*p + 2] = (parseInt(29*((i+canvas6.width)*s+y))%2 + parseInt(29*((canvas6.width*2 - i)*s + y)) % 2)*127;
+                githubphagocytePixel[4*p + 3] = 255;
+            }
+
+        context6.putImageData(githubphagocyteData, 0, 0, 0, 0, canvas6.width, canvas6.height);
+        
     };
 
 })();
-
-
-
-
-
-
-
 
 
 
