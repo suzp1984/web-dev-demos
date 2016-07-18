@@ -211,12 +211,12 @@
         for (let i = 0; i < canvas6.height; i++)
             for (let j = 0; j < canvas6.width; j++) {
                 let p = i * canvas6.width + j;
-                let s = 3.0/(j+99);
-                let y = (j + Math.sin((i*i + Math.pow(j-700, 2)*5)/100.0/canvas6.width)*35)*s;
+                let s = 3.0/(i+99);
+                let y = (i + Math.sin((j*j + Math.pow(i-700, 2)*5)/100.0/canvas6.width)*35)*s;
 
-                githubphagocytePixel[4*p + 0] = (parseInt((i+canvas6.width)*s+y)%2 + parseInt((canvas6.width*2 - i)*s + y) % 2 )*127;
-                githubphagocytePixel[4*p + 1] = (parseInt(5*((i+canvas6.width)*s+y))%2 + parseInt(5*((canvas6.width*2 - i)*s + y)) % 2)*127;
-                githubphagocytePixel[4*p + 2] = (parseInt(29*((i+canvas6.width)*s+y))%2 + parseInt(29*((canvas6.width*2 - i)*s + y)) % 2)*127;
+                githubphagocytePixel[4*p + 0] = (parseInt((j+canvas6.width)*s+y)%2 + parseInt((canvas6.width*2 - j)*s + y) % 2 )*127;
+                githubphagocytePixel[4*p + 1] = (parseInt(5*((j+canvas6.width)*s+y))%2 + parseInt(5*((canvas6.width*2 - j)*s + y)) % 2)*127;
+                githubphagocytePixel[4*p + 2] = (parseInt(29*((j+canvas6.width)*s+y))%2 + parseInt(29*((canvas6.width*2 - j)*s + y)) % 2)*127;
                 githubphagocytePixel[4*p + 3] = 255;
             }
 
