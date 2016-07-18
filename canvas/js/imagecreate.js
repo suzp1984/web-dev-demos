@@ -5,6 +5,9 @@
     let canvas2 = document.getElementById("mandelbrot");
     let context2 = canvas2.getContext("2d");
 
+    let canvas3 = document.getElementById("martinart");
+    let context3 = canvas3.getContext("2d");
+
     window.onload = function() {
         // image1 
         canvas.width = 800;
@@ -29,7 +32,7 @@
         canvas2.width = 1024;
         canvas2.height = 1024;
 
-        let mandelbrotData = context.createImageData(canvas2.width, canvas2.height);
+        let mandelbrotData = context2.createImageData(canvas2.width, canvas2.height);
         let mandelbrotPixel = mandelbrotData.data;
 
         for (let i = 0; i < canvas2.height; i++)
@@ -55,10 +58,68 @@
             }
 
         context2.putImageData(mandelbrotData, 0, 0, 0, 0, canvas2.width, canvas2.height);
+
+        // martin buttner art
+        canvas3.width = 1024;
+        canvas3.height = 1024;
+
+        let martinData = context3.createImageData(canvas3.width, canvas3.height);
+        let martinPixel = martinData.data;
+        let r = new Array(canvas3.height);
+        let g = new Array(canvas3.height);
+        let b = new Array(canvas3.height);
+        for (let i = 0; i < canvas3.height; i++) {
+            r[i] = new Array(canvas3.width);
+            g[i] = new Array(canvas3.width);
+            b[i] = new Array(canvas3.width);
+            for (let j = 0; j < canvas3.width; j++) {
+                r[i][j] = 0;
+                g[i][j] = 0;
+                b[i][j] = 0;
+            }
+        }
+
+        for (let i = 0; i < canvas3.height; i++)
+            for (let j = 0; j < canvas3.width; j++) {
+                let p = i * canvas3.width + j;
+                
+                martinPixel[4*p + 0] = martin_art_r(i, j);
+                martinPixel[4*p + 1] = martin_art_g(i, j);
+                martinPixel[4*p + 2] = martin_art_b(i, j);
+                martinPixel[4*p + 3] = 255;
+            }
+            
+        context3.putImageData(martinData, 0, 0, 0, 0, canvas3.width, canvas3.height);
+
+        
+        function martin_art_r(i, j) {
+            // console.log(i, j, c[i][j]);
+            if (r[i][j] == 0) {
+                r[i][j] = Math.floor(Math.random() * 999) == 0 ? Math.floor(Math.random() * 256) : martin_art_r((i + Math.floor(Math.random() * 2)) % 1024, (j + Math.floor(Math.random() * 2)) % 1024);
+            }
+
+            return r[i][j];
+        };
+
+        function martin_art_g(i, j) {
+            if (g[i][j] == 0) {
+                g[i][j] = Math.floor(Math.random() * 999) == 0 ? Math.floor(Math.random() * 256) : martin_art_g((i + Math.floor(Math.random() * 2)) % 1024, (j + Math.floor(Math.random() * 2)) % 1024);
+            }
+
+            return g[i][j];
+        };
+
+        function martin_art_b(i, j) {
+            if (b[i][j] == 0) {
+                b[i][j] = Math.floor(Math.random() * 999) == 0 ? Math.floor(Math.random() * 256) : martin_art_b((i + Math.floor(Math.random() * 2)) % 1024, (j + Math.floor(Math.random() * 2)) % 1024);
+            }
+
+            return b[i][j];
+        };
     };
 
-    
 })();
+
 
 
 
