@@ -1,3 +1,5 @@
+// original reference: https://www.zhihu.com/question/30262900
+// 
 (function() {
     let canvas = document.getElementById("canvas");
     let context = canvas.getContext("2d");
