@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The basic api of SVG</title>
+    <style>
+      svg {
+      display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The basic api of SVG</h1>
+    <svg width="200" height="200">
+      <!--Face-->
+      <circle cx="100" cy="100" r="90" fill="#39F" />
+      <!--Eyes-->
+      <circle cx="70" cy="80" r="20" fill="white" />
+      <circle cx="130" cy="80" r="20" fill="white" />
+      <circle cx="65" cy="75" r="10" fill="black" />
+      <circle cx="125" cy="75" r="10" fill="black"/>
+      <!--Smile-->
+      <path d="M 50 140 A 60 60 0 0 0 150 140" 
+            stroke="white" stroke-width="3" fill="none" />
+    </svg>
+
+    <svg width="100%" height="400">
+      <rect 
+         x="10" 
+         y="10" 
+         rx="10" 
+         ry="10" 
+         width="150" 
+         height="100" 
+         stroke="red"
+         stroke-width="3"
+         fill="none">
+      </rect>
+
+      <circle 
+         cx="250" 
+         cy="60" 
+         r="50" 
+         stroke="red" 
+         fill="none">
+      </circle>
+
+      <ellipse 
+         cx="400" 
+         cy="60" 
+         rx="70" 
+         ry="50" 
+         stroke="red" 
+         fill="none">
+      </ellipse>
+
+      <line 
+         x1="10" 
+         y1="120" 
+         x2="160" 
+         y2="220"
+         stroke-width="4"
+         stroke="red">
+      </line>
+
+      <polyline 
+         points="250 120 
+                 300 220
+                 200 220"
+         stroke="red"
+         fill="none">
+      </polyline>
+
+      <!-- transform="translate(150 0)" -->
+      <polygon 
+         points="250 120 
+                 300 220
+                 200 220"
+         stroke="red"
+         stroke-width="5"
+         fill="yellow"
+         transform="translate(150 0)">
+      </polygon>
+    </svg>
+  </body>
+</html>
