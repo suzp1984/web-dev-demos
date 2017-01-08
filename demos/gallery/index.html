@@ -11,19 +11,20 @@
 
   <body onselectstart="return false;">
 
-    <div class="wrap">
-      <div class="photo photo-center photo-front" onclick="turn(this)">
+    <div class="wrap" id="wrap" >
+      <div class="photo photo-front" onclick="turn(this)" id="photo_{{index}}" >
         <div class="side side-front">
-          <img src="image/grandma.JPG" />
-          <p class="caption">Test Caption</p>
+          <img src="{{img}}" />
+          <p class="caption">{{caption}}</p>
         </div>
 
         <div class="side side-back">
-          <p class="desc">Description</p>
+          <p class="desc">{{desc}}</p>
         </div>
       </div>
     </div>
 
+    <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
   </body>
